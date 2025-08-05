@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover India - Your Ultimate Travel Guide</title>
+    <meta name="description" content="Explore incredible destinations across India with detailed travel guides, itineraries, budgets, and booking system. Plan your perfect trip to Rajasthan, Kerala, Goa, and more.">
+    <meta name="keywords" content="India tourism, travel guide, Indian destinations, trip planning, Rajasthan, Kerala, Goa, Himachal Pradesh">
+    <meta name="author" content="Discover India">
+    
+    <!-- Accessibility Features -->
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#FF6B35">
+    
     <link rel="stylesheet" href="tourism-styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,204 +19,212 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="nav-brand">
-                <i class="fas fa-map-marked-alt"></i>
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                 <span>Discover India</span>
             </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#states">Explore States</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem" aria-current="page">Home</a></li>
+                <li role="none"><a href="#states" role="menuitem">Explore States</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Incredible India Awaits</h1>
-            <p>Discover breathtaking destinations, rich culture, and unforgettable experiences across the diverse states of India.</p>
-            <button class="cta-button" onclick="scrollToStates()">
-                <i class="fas fa-compass"></i> Start Your Journey
-            </button>
-        </div>
-        <div class="hero-video">
-            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="India Tourism">
-        </div>
-    </section>
-
-    <!-- Quick Stats -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <i class="fas fa-map"></i>
-                    <h3>28</h3>
-                    <p>States</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-camera"></i>
-                    <h3>150+</h3>
-                    <p>Tourist Places</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-route"></i>
-                    <h3>50+</h3>
-                    <p>Itineraries</p>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-star"></i>
-                    <h3>4.8</h3>
-                    <p>User Rating</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- States Selection -->
-    <section id="states" class="states-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Choose Your Destination State</h2>
-                <p>Select a state to explore its magnificent tourist attractions and plan your perfect trip</p>
-            </div>
-            
-            <div class="states-grid">
-                <div class="state-card" data-state="rajasthan">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rajasthan">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Rajasthan</h3>
-                        <p>Land of Kings and Majestic Palaces</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-crown"></i> Royal Heritage</span>
-                            <span><i class="fas fa-sun"></i> Desert Safari</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="state-card" data-state="kerala">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kerala">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Kerala</h3>
-                        <p>God's Own Country</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-water"></i> Backwaters</span>
-                            <span><i class="fas fa-leaf"></i> Ayurveda</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="state-card" data-state="himachal">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Himachal Pradesh">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Himachal Pradesh</h3>
-                        <p>Land of Snow-Capped Mountains</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-mountain"></i> Hill Stations</span>
-                            <span><i class="fas fa-skiing"></i> Adventure</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="state-card" data-state="goa">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Goa">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Goa</h3>
-                        <p>Tropical Beach Paradise</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-umbrella-beach"></i> Beaches</span>
-                            <span><i class="fas fa-cocktail"></i> Nightlife</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="state-card" data-state="maharashtra">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maharashtra">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Maharashtra</h3>
-                        <p>Land of Forts and Caves</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-fort-awesome"></i> Historic Forts</span>
-                            <span><i class="fas fa-city"></i> Mumbai</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="state-card" data-state="karnataka">
-                    <div class="state-image">
-                        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Karnataka">
-                        <div class="state-overlay"></div>
-                    </div>
-                    <div class="state-info">
-                        <h3>Karnataka</h3>
-                        <p>Silicon Valley of India</p>
-                        <div class="state-highlights">
-                            <span><i class="fas fa-tree"></i> Gardens</span>
-                            <span><i class="fas fa-temple"></i> Temples</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tourist Places Section -->
-    <section id="places" class="places-section" style="display: none;">
-        <div class="container">
-            <div class="section-header">
-                <button class="back-btn" onclick="backToStates()">
-                    <i class="fas fa-arrow-left"></i> Back to States
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-heading">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 id="hero-heading">Incredible India Awaits</h1>
+                <p>Discover breathtaking destinations, rich culture, and unforgettable experiences across the diverse states of India.</p>
+                <button class="cta-button" onclick="scrollToStates()" aria-describedby="cta-description">
+                    <i class="fas fa-compass" aria-hidden="true"></i> Start Your Journey
                 </button>
-                <h2 id="selectedStateName">Tourist Places</h2>
-                <p id="selectedStateDesc">Explore the amazing destinations in this state</p>
+                <p id="cta-description" class="sr-only">Navigate to explore different states of India</p>
             </div>
-            
-            <div id="placesGrid" class="places-grid"></div>
-        </div>
-    </section>
+            <div class="hero-video" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Aerial view of India Gate monument in New Delhi surrounded by lush gardens, representing India's heritage and tourism" loading="eager">
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-section" aria-labelledby="stats-heading">
+            <div class="container">
+                <h2 id="stats-heading" class="sr-only">Travel Statistics</h2>
+                <div class="stats-grid" role="list">
+                    <div class="stat-item" role="listitem">
+                        <i class="fas fa-map" aria-hidden="true"></i>
+                        <h3><span class="stat-number">28</span></h3>
+                        <p>States covered in our travel guide</p>
+                    </div>
+                    <div class="stat-item" role="listitem">
+                        <i class="fas fa-camera" aria-hidden="true"></i>
+                        <h3><span class="stat-number">150+</span></h3>
+                        <p>Tourist destinations featured</p>
+                    </div>
+                    <div class="stat-item" role="listitem">
+                        <i class="fas fa-route" aria-hidden="true"></i>
+                        <h3><span class="stat-number">50+</span></h3>
+                        <p>Detailed travel itineraries</p>
+                    </div>
+                    <div class="stat-item" role="listitem">
+                        <i class="fas fa-star" aria-hidden="true"></i>
+                        <h3><span class="stat-number">4.8</span></h3>
+                        <p>Average user rating out of 5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- States Selection -->
+        <section id="states" class="states-section" aria-labelledby="states-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="states-heading">Choose Your Destination State</h2>
+                    <p>Select a state to explore its magnificent tourist attractions and plan your perfect trip</p>
+                </div>
+                
+                <div class="states-grid" role="list">
+                    <article class="state-card" data-state="rajasthan" role="listitem" tabindex="0" aria-label="Explore Rajasthan destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1599661046827-dacde6976549?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Majestic Hawa Mahal (Palace of Winds) in Jaipur, Rajasthan, showing traditional pink sandstone architecture with ornate windows" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Rajasthan</h3>
+                            <p>Land of Kings and Majestic Palaces</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-crown" aria-hidden="true"></i> Royal Heritage</span>
+                                <span role="listitem"><i class="fas fa-sun" aria-hidden="true"></i> Desert Safari</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="state-card" data-state="kerala" role="listitem" tabindex="0" aria-label="Explore Kerala destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Traditional Kerala houseboat floating on serene backwaters surrounded by coconut palms and lush greenery" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Kerala</h3>
+                            <p>God's Own Country</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-water" aria-hidden="true"></i> Backwaters</span>
+                                <span role="listitem"><i class="fas fa-leaf" aria-hidden="true"></i> Ayurveda</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="state-card" data-state="himachal" role="listitem" tabindex="0" aria-label="Explore Himachal Pradesh destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Snow-capped Himalayan mountains with pine forests and valley views in Himachal Pradesh" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Himachal Pradesh</h3>
+                            <p>Land of Snow-Capped Mountains</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-mountain" aria-hidden="true"></i> Hill Stations</span>
+                                <span role="listitem"><i class="fas fa-skiing" aria-hidden="true"></i> Adventure</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="state-card" data-state="goa" role="listitem" tabindex="0" aria-label="Explore Goa destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Golden sunset over pristine Goa beach with palm trees and fishing boats, showing tropical paradise" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Goa</h3>
+                            <p>Tropical Beach Paradise</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-umbrella-beach" aria-hidden="true"></i> Beaches</span>
+                                <span role="listitem"><i class="fas fa-cocktail" aria-hidden="true"></i> Nightlife</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="state-card" data-state="maharashtra" role="listitem" tabindex="0" aria-label="Explore Maharashtra destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Iconic Gateway of India monument in Mumbai with colonial architecture and Arabian Sea in background" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Maharashtra</h3>
+                            <p>Land of Forts and Caves</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-fort-awesome" aria-hidden="true"></i> Historic Forts</span>
+                                <span role="listitem"><i class="fas fa-city" aria-hidden="true"></i> Mumbai</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="state-card" data-state="karnataka" role="listitem" tabindex="0" aria-label="Explore Karnataka destinations">
+                        <div class="state-image">
+                            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beautiful Mysore Palace illuminated at dusk with Indo-Saracenic architecture and landscaped gardens" loading="lazy">
+                            <div class="state-overlay" aria-hidden="true"></div>
+                        </div>
+                        <div class="state-info">
+                            <h3>Karnataka</h3>
+                            <p>Silicon Valley of India</p>
+                            <div class="state-highlights" role="list" aria-label="Key attractions">
+                                <span role="listitem"><i class="fas fa-tree" aria-hidden="true"></i> Gardens</span>
+                                <span role="listitem"><i class="fas fa-temple" aria-hidden="true"></i> Temples</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tourist Places Section -->
+        <section id="places" class="places-section" style="display: none;" aria-labelledby="selectedStateName">
+            <div class="container">
+                <div class="section-header">
+                    <button class="back-btn" onclick="backToStates()" aria-label="Go back to states selection">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to States
+                    </button>
+                    <h2 id="selectedStateName">Tourist Places</h2>
+                    <p id="selectedStateDesc">Explore the amazing destinations in this state</p>
+                </div>
+                
+                <div id="placesGrid" class="places-grid" role="list" aria-label="Tourist destinations"></div>
+            </div>
+        </section>
+    </main>
 
     <!-- Place Details Modal -->
-    <div id="placeModal" class="modal">
+    <div id="placeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalPlaceName" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modalPlaceName"></h2>
-                <span class="close-modal">&times;</span>
+                <button class="close-modal" aria-label="Close place details modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="place-gallery">
+                <div class="place-gallery" role="group" aria-label="Place images">
                     <div class="main-image">
-                        <img id="modalMainImage" src="" alt="">
+                        <img id="modalMainImage" src="" alt="" role="img">
                         <div class="image-nav">
-                            <button class="prev-img"><i class="fas fa-chevron-left"></i></button>
-                            <button class="next-img"><i class="fas fa-chevron-right"></i></button>
+                            <button class="prev-img" aria-label="Previous image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="next-img" aria-label="Next image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
-                    <div class="image-thumbnails" id="imageThumbnails"></div>
+                    <div class="image-thumbnails" id="imageThumbnails" role="list" aria-label="Image thumbnails"></div>
                 </div>
                 
                 <div class="place-info">
@@ -217,33 +233,33 @@
                     </div>
                     
                     <div class="details-tabs">
-                        <div class="tab-buttons">
-                            <button class="tab-btn active" data-tab="overview">Overview</button>
-                            <button class="tab-btn" data-tab="itinerary">Itinerary</button>
-                            <button class="tab-btn" data-tab="budget">Budget</button>
-                            <button class="tab-btn" data-tab="location">Location</button>
+                        <div class="tab-buttons" role="tablist" aria-label="Place information tabs">
+                            <button class="tab-btn active" data-tab="overview" role="tab" aria-selected="true" aria-controls="overview" id="tab-overview">Overview</button>
+                            <button class="tab-btn" data-tab="itinerary" role="tab" aria-selected="false" aria-controls="itinerary" id="tab-itinerary">Itinerary</button>
+                            <button class="tab-btn" data-tab="budget" role="tab" aria-selected="false" aria-controls="budget" id="tab-budget">Budget</button>
+                            <button class="tab-btn" data-tab="location" role="tab" aria-selected="false" aria-controls="location" id="tab-location">Location</button>
                         </div>
                         
                         <div class="tab-content">
-                            <div id="overview" class="tab-pane active">
+                            <div id="overview" class="tab-pane active" role="tabpanel" aria-labelledby="tab-overview">
                                 <div class="overview-grid">
                                     <div class="overview-card">
-                                        <i class="fas fa-calendar-alt"></i>
+                                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                                         <h4>Best Time to Visit</h4>
                                         <p id="modalBestTime"></p>
                                     </div>
                                     <div class="overview-card">
-                                        <i class="fas fa-clock"></i>
+                                        <i class="fas fa-clock" aria-hidden="true"></i>
                                         <h4>Duration</h4>
                                         <p id="modalDuration"></p>
                                     </div>
                                     <div class="overview-card">
-                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star" aria-hidden="true"></i>
                                         <h4>Rating</h4>
                                         <p id="modalRating"></p>
                                     </div>
                                     <div class="overview-card">
-                                        <i class="fas fa-tag"></i>
+                                        <i class="fas fa-tag" aria-hidden="true"></i>
                                         <h4>Category</h4>
                                         <p id="modalCategory"></p>
                                     </div>
@@ -251,33 +267,33 @@
                                 
                                 <!-- Plan a Trip Button -->
                                 <div class="plan-trip-section">
-                                    <button class="plan-trip-btn" onclick="openBookingModal()">
-                                        <i class="fas fa-suitcase-rolling"></i>
+                                    <button class="plan-trip-btn" onclick="openBookingModal()" aria-describedby="trip-features">
+                                        <i class="fas fa-suitcase-rolling" aria-hidden="true"></i>
                                         Plan a Trip to <span id="tripDestination"></span>
                                     </button>
-                                    <p class="trip-features">
-                                        <span><i class="fas fa-check"></i> Custom Itinerary</span>
-                                        <span><i class="fas fa-check"></i> Hotel Booking</span>
-                                        <span><i class="fas fa-check"></i> Transport</span>
-                                        <span><i class="fas fa-check"></i> 24/7 Support</span>
-                                    </p>
+                                    <div class="trip-features" id="trip-features" role="list" aria-label="Trip planning features">
+                                        <span role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Custom Itinerary</span>
+                                        <span role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Hotel Booking</span>
+                                        <span role="listitem"><i class="fas fa-check" aria-hidden="true"></i> Transport</span>
+                                        <span role="listitem"><i class="fas fa-check" aria-hidden="true"></i> 24/7 Support</span>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div id="itinerary" class="tab-pane">
+                            <div id="itinerary" class="tab-pane" role="tabpanel" aria-labelledby="tab-itinerary">
                                 <h4>Suggested Itinerary</h4>
-                                <div id="modalItinerary"></div>
+                                <div id="modalItinerary" role="list" aria-label="Day-by-day itinerary"></div>
                             </div>
                             
-                            <div id="budget" class="tab-pane">
+                            <div id="budget" class="tab-pane" role="tabpanel" aria-labelledby="tab-budget">
                                 <h4>Budget Breakdown</h4>
-                                <div id="modalBudget"></div>
+                                <div id="modalBudget" role="list" aria-label="Cost breakdown"></div>
                             </div>
                             
-                            <div id="location" class="tab-pane">
+                            <div id="location" class="tab-pane" role="tabpanel" aria-labelledby="tab-location">
                                 <h4>Location & Getting There</h4>
                                 <div id="modalLocation"></div>
-                                <div id="modalMap" class="map-container"></div>
+                                <div id="modalMap" class="map-container" role="application" aria-label="Location map"></div>
                             </div>
                         </div>
                     </div>
@@ -582,29 +598,29 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-map-marked-alt"></i> Discover India</h3>
+                    <h3><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Discover India</h3>
                     <p>Your ultimate guide to exploring the incredible diversity and beauty of India. Plan your perfect trip with detailed guides and insider tips.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Subscribe to our YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
-                <div class="footer-section">
+                <nav class="footer-section" aria-label="Popular destinations">
                     <h4>Popular States</h4>
                     <ul>
-                        <li><a href="#" onclick="selectState('rajasthan')">Rajasthan</a></li>
-                        <li><a href="#" onclick="selectState('kerala')">Kerala</a></li>
-                        <li><a href="#" onclick="selectState('goa')">Goa</a></li>
-                        <li><a href="#" onclick="selectState('himachal')">Himachal Pradesh</a></li>
+                        <li><a href="#" onclick="selectState('rajasthan')" role="button">Rajasthan</a></li>
+                        <li><a href="#" onclick="selectState('kerala')" role="button">Kerala</a></li>
+                        <li><a href="#" onclick="selectState('goa')" role="button">Goa</a></li>
+                        <li><a href="#" onclick="selectState('himachal')" role="button">Himachal Pradesh</a></li>
                     </ul>
-                </div>
-                <div class="footer-section">
+                </nav>
+                <nav class="footer-section" aria-label="Quick navigation">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -612,14 +628,16 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                </div>
+                </nav>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@discoverindia.com</li>
-                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-map-pin"></i> New Delhi, India</li>
-                    </ul>
+                    <address>
+                        <ul>
+                            <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@discoverindia.com">info@discoverindia.com</a></li>
+                            <li><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                            <li><i class="fas fa-map-pin" aria-hidden="true"></i> New Delhi, India</li>
+                        </ul>
+                    </address>
                 </div>
             </div>
             <div class="footer-bottom">
